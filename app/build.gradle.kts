@@ -50,4 +50,7 @@ dependencies {
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    //MLKit digital ink
+    implementation("com.google.mlkit:digital-ink-recognition:18.1.0")
 }
