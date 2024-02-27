@@ -79,11 +79,12 @@ object StrokeManager {
         val ink= inkBuilder.build()
         recognizer.recognize(ink)
             .addOnSuccessListener { result:RecognitionResult->
-                textView.text=result.candidates[0].text
+               textView.text=result.candidates[0].text
             }
             .addOnFailureListener{e:Exception->
                 Log.e(ContentValues.TAG, "Error during recognition: $e"
                 )
             }
+
     }
 }
