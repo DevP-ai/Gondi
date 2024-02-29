@@ -5,5 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.StoryActivity">
+    <TextView
+        android:id="@+id/detectedLetter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Detected Letter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/englishStory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/detectedLetter"
+        app:layout_constraintEnd_toEndOf="@id/detectedLetter"
+        app:layout_constraintTop_toBottomOf="@id/detectedLetter"
+        android:layout_marginTop="20dp"
+        android:textStyle="italic"
+        android:text="Story"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

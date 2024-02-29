@@ -61,6 +61,10 @@ class HomeFragment : Fragment() {
                             val bundle=Bundle()
                             bundle.putString("recognizeText",recognizedText)
                             intent.putExtras(bundle)
+                            binding.drawView.clear()
+                            clear()
+                            textView.text=""
+                            binding.output.text="output"
                             startActivity(intent)
                         },2000)
                     }
