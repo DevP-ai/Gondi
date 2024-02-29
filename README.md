@@ -1,4 +1,5 @@
 # Gondi
 
-![image](https://github.com/DevP-ai/Gondi/assets/107491760/c2bd68ed-205b-4c52-8236-8d93a37400f8)
+![image](https://github.com/DevP-ai/Gondi/assets/107491760/1f1e3675-16ed-4e55-99c0-3ec985c08f71)
+
 
