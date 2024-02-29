@@ -1,6 +1,7 @@
 package com.compose.android.dev.edu.iiitnr.gondi.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,14 +39,28 @@ class HomeFragment : Fragment() {
         download()
         val textView=binding.textResult
 
+//        binding.btnRecognize.setOnClickListener {
+//            recognize(textView)
+//            binding.output.text=textView.text
+//        }
+
         binding.btnRecognize.setOnClickListener {
-          recognize(textView)
+            recognize(
+                onSuccessListener = {recognizedText->
+                    textView.text=recognizedText
+                    binding.output.text=recognizedText
+                },
+                onFailureListener = {e->
+                    Log.e("OUTPUT", "Error during recognition: $e")
+                }
+            )
         }
 
         binding.btnClear.setOnClickListener {
             binding.drawView.clear()
             clear()
             textView.text=""
+            binding.output.text="output"
         }
 
     }

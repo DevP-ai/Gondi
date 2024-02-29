@@ -4,7 +4,8 @@ import android.content.ContentValues
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.TextView
-import android.widget.Toast
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.common.model.DownloadConditions
 import com.google.mlkit.common.model.RemoteModelManager
@@ -14,6 +15,7 @@ import com.google.mlkit.vision.digitalink.DigitalInkRecognitionModelIdentifier
 import com.google.mlkit.vision.digitalink.DigitalInkRecognizerOptions
 import com.google.mlkit.vision.digitalink.Ink
 import com.google.mlkit.vision.digitalink.RecognitionResult
+import kotlin.properties.Delegates
 
 object StrokeManager {
     private var model:DigitalInkRecognitionModel?=null
@@ -71,7 +73,7 @@ object StrokeManager {
         inkBuilder=Ink.builder()
     }
 
-    fun recognize(textView: TextView){
+    fun recognize(textView:TextView){
         val recognizer=DigitalInkRecognition.getClient(
             DigitalInkRecognizerOptions.builder(model!!).build()
         )
@@ -85,6 +87,22 @@ object StrokeManager {
                 Log.e(ContentValues.TAG, "Error during recognition: $e"
                 )
             }
+    }
 
+
+
+    fun recognize(onSuccessListener:(String)->Unit,onFailureListener:(Exception)->Unit){
+        val recognizer=DigitalInkRecognition.getClient(
+            DigitalInkRecognizerOptions.builder(model!!).build()
+        )
+
+        val ink= inkBuilder.build()
+        recognizer.recognize(ink)
+            .addOnSuccessListener { result:RecognitionResult->
+                onSuccessListener(result.candidates[0].text)
+            }
+            .addOnFailureListener{e:Exception->
+                onFailureListener(e)
+            }
     }
 }
