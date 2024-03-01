@@ -1,9 +1,8 @@
-package com.compose.android.dev.edu.iiitnr.gondi.ui
+package com.compose.android.dev.edu.iiitnr.gondi.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.compose.android.dev.edu.iiitnr.gondi.R
 import com.compose.android.dev.edu.iiitnr.gondi.databinding.ActivityStoryBinding
 import com.compose.android.dev.edu.iiitnr.gondi.utils.StoryFile.getStory
 

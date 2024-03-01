@@ -7,12 +7,13 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.compose.android.dev.edu.iiitnr.gondi.ui.HomeFragment"
+        android:name="com.compose.android.dev.edu.iiitnr.gondi.ui.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.compose.android.dev.edu.iiitnr.gondi.ui.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/slateFragment"
+        android:name="com.compose.android.dev.edu.iiitnr.gondi.ui.fragment.SlateFragment"
+        android:label="fragment_slate"
+        tools:layout="@layout/fragment_slate" />
 </navigation>

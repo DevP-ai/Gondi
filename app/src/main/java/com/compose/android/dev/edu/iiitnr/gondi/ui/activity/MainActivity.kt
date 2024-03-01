@@ -1,4 +1,4 @@
-package com.compose.android.dev.edu.iiitnr.gondi.ui
+package com.compose.android.dev.edu.iiitnr.gondi.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
