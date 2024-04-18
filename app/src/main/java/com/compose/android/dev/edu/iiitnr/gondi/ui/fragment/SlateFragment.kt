@@ -41,7 +41,6 @@ class SlateFragment : Fragment() {
             StrokeManager.recognize(
                 onSuccessListener = { recognizedText ->
                     textView.text = recognizedText
-                    binding.output.text = recognizedText
 
                     val englishAlphabet = recognizedText.matches(Regex("[a-zA-Z]+"))
 
@@ -54,7 +53,6 @@ class SlateFragment : Fragment() {
                             binding.drawView.clear()
                             StrokeManager.clear()
                             textView.text = ""
-                            binding.output.text = "output"
                             startActivity(intent)
                         }, 2000)
                     }
@@ -71,7 +69,6 @@ class SlateFragment : Fragment() {
             binding.drawView.clear()
             StrokeManager.clear()
             textView.text=""
-            binding.output.text="output"
         }
 
     }

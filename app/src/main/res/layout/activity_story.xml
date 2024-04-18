@@ -5,31 +5,185 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.StoryActivity">
-    <TextView
-        android:id="@+id/detectedLetter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Detected Letter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
 
-    <TextView
-        android:id="@+id/englishStory"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/detectedLetter"
-        app:layout_constraintEnd_toEndOf="@id/detectedLetter"
-        app:layout_constraintTop_toBottomOf="@id/detectedLetter"
-        android:layout_marginTop="20dp"
-        android:textStyle="italic"
-        android:text="Story"
-        android:textSize="20sp"
-        android:textColor="@color/black"/>
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Story"
+                app:navigationIcon="@drawable/ic_back"
+                app:titleTextColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/detectedLetter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:hint="Detected Letter"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/tool"
+                app:layout_constraintStart_toStartOf="@id/tool"
+                app:layout_constraintTop_toBottomOf="@id/tool" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/img_card"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                app:cardElevation="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="@id/detectedLetter"
+                app:layout_constraintStart_toStartOf="@id/detectedLetter"
+                app:layout_constraintTop_toBottomOf="@id/detectedLetter">
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ball" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/englishTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="English Story"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="@id/img_card"
+                app:layout_constraintStart_toStartOf="@id/img_card"
+                app:layout_constraintTop_toBottomOf="@id/img_card" />
+
+
+            <TextView
+                android:id="@+id/englishStory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Story"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="@id/englishTag"
+                app:layout_constraintStart_toStartOf="@id/englishTag"
+                app:layout_constraintTop_toBottomOf="@id/englishTag" />
+
+
+            <TextView
+                android:id="@+id/gondiTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Gondi Story"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="@id/englishStory"
+                app:layout_constraintStart_toStartOf="@id/englishStory"
+                app:layout_constraintTop_toBottomOf="@id/englishStory" />
+
+            <TextView
+                android:id="@+id/gondiStory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Gondi story"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="@id/gondiTag"
+                app:layout_constraintStart_toStartOf="@id/gondiTag"
+                app:layout_constraintTop_toBottomOf="@id/gondiTag" />
+
+
+
+            <TextView
+                android:id="@+id/hindiTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Hindi Story"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="@id/gondiStory"
+                app:layout_constraintStart_toStartOf="@id/gondiStory"
+                app:layout_constraintTop_toBottomOf="@id/gondiStory" />
+
+            <TextView
+                android:id="@+id/hindiStory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Hindi story"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="@id/hindiTag"
+                app:layout_constraintStart_toStartOf="@id/hindiTag"
+                app:layout_constraintTop_toBottomOf="@id/hindiTag" />
+
+
+            <TextView
+                android:id="@+id/assameseTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Assamese Story"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="@id/hindiStory"
+                app:layout_constraintStart_toStartOf="@id/hindiStory"
+                app:layout_constraintTop_toBottomOf="@id/hindiStory" />
+
+            <TextView
+                android:id="@+id/assameseStory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Assamese story"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="@id/assameseTag"
+                app:layout_constraintStart_toStartOf="@id/assameseTag"
+                app:layout_constraintTop_toBottomOf="@id/assameseTag" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

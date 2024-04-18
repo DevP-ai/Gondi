@@ -15,15 +15,6 @@
         android:theme="@style/Theme.Gondi"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.AssameseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.SanskritActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.GondiActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.activity.StoryActivity"
             android:exported="false" />
         <activity

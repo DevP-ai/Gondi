@@ -72,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/green"
                 android:fontFamily="sans-serif-medium"
                 android:text="Recognize"
                 android:textAllCaps="false"
@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/red"
                 android:fontFamily="sans-serif-medium"
                 android:text="Clear"
                 android:textAllCaps="false"
@@ -93,14 +93,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/output"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Output"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
 
     </LinearLayout>
 

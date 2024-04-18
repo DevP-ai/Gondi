@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@+id/slateFragment">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.compose.android.dev.edu.iiitnr.gondi.ui.fragment.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/slateFragment"
         android:name="com.compose.android.dev.edu.iiitnr.gondi.ui.fragment.SlateFragment"
         android:label="fragment_slate"
         tools:layout="@layout/fragment_slate" />
+    <fragment
+        android:id="@+id/alphabetFragment"
+        android:name="com.compose.android.dev.edu.iiitnr.gondi.ui.fragment.AlphabetFragment"
+        android:label="fragment_alphabet"
+        tools:layout="@layout/fragment_alphabet" />
 </navigation>

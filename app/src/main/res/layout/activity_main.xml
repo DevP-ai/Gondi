@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/bottomView"
         app:layout_constraintEnd_toEndOf="@id/bottomView"
         app:layout_constraintStart_toStartOf="@id/bottomView"
-        app:navGraph="@navigation/bottom_nav" />
+        app:navGraph="@navigation/bottom_nav"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomView"
