@@ -8,4 +8,8 @@
   <item android:id="@+id/alphabetFragment"
       android:title="Lipi"
       android:icon="@drawable/ic_maths"/>
+
+   <item android:id="@+id/dictionaryFragment"
+       android:title="Dictionary"
+       android:icon="@drawable/ic_dict"/>
 </menu>

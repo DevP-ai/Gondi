@@ -54,4 +54,10 @@ dependencies {
 
     //MLKit digital ink
     implementation("com.google.mlkit:digital-ink-recognition:18.1.0")
+
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    //gson
+    implementation ("com.google.code.gson:gson:2.10.1")
 }
