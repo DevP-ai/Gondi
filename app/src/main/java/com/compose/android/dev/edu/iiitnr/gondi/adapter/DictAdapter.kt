@@ -2,13 +2,18 @@ package com.compose.android.dev.edu.iiitnr.gondi.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.compose.android.dev.edu.iiitnr.gondi.WordFilter
 import com.compose.android.dev.edu.iiitnr.gondi.databinding.DictLayoutBinding
 import com.compose.android.dev.edu.iiitnr.gondi.model.Dict
 
-class DictAdapter():RecyclerView.Adapter<DictAdapter.DictViewHolder>(){
+class DictAdapter():RecyclerView.Adapter<DictAdapter.DictViewHolder>(),
+Filterable{
 
-    private var dictList= listOf<Dict>()
+    var dictList= listOf<Dict>()
+    var originalList = ArrayList<Dict>()
 
     inner class DictViewHolder(val binding: DictLayoutBinding):RecyclerView.ViewHolder(binding.root)
 
@@ -22,6 +27,7 @@ class DictAdapter():RecyclerView.Adapter<DictAdapter.DictViewHolder>(){
 
     fun submitList(list: List<Dict>) {
         dictList = list
+        originalList = ArrayList(list)
         notifyDataSetChanged()
     }
 
@@ -32,5 +38,10 @@ class DictAdapter():RecyclerView.Adapter<DictAdapter.DictViewHolder>(){
         holder.binding.txtGondi.text = data.Gondi
     }
 
+    private var filter : WordFilter? = null
+    override fun getFilter(): Filter {
+        if(filter==null) return WordFilter(this,originalList)
+        return filter as WordFilter
+    }
 
 }
