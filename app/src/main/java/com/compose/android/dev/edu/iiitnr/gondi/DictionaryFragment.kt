@@ -30,19 +30,21 @@ class DictionaryFragment : Fragment() {
         binding = FragmentDictionaryBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
 
-        binding.dictRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        dictAdapter = DictAdapter()
-        binding.dictRecyclerView.adapter = dictAdapter
 
-        viewModel.getDict().observe(viewLifecycleOwner, Observer { list ->
-            dictAdapter.submitList(list)
-        })
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.dictRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        dictAdapter = DictAdapter()
+        binding.dictRecyclerView.adapter = dictAdapter
+
+
+
+
 
         binding.searchJob.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -55,6 +57,13 @@ class DictionaryFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getDict().observe(viewLifecycleOwner, Observer { list ->
+            dictAdapter.submitList(list)
+        })
     }
 
 }

@@ -23,6 +23,7 @@ class AlphabetFragment : Fragment() {
     ): View? {
         binding = FragmentAlphabetBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
+
         return binding.root
     }
 
